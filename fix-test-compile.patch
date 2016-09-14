@@ -1,0 +1,9 @@
+diff -uNr libtermkey-0.18.orig/t/05read.c libtermkey-0.18/t/05read.c
+--- libtermkey-0.18.orig/t/05read.c	2015-10-06 23:52:28.000000000 +0200
++++ libtermkey-0.18/t/05read.c	2016-04-14 14:37:56.533341783 +0200
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <unistd.h>
+ #include <errno.h>
+ #include "../termkey.h"
+ #include "taplib.h"
