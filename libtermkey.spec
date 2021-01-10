@@ -6,7 +6,7 @@
 Summary:	Library for easy processing of keyboard entry from terminal-based programs
 Name:		libtermkey
 Version:	0.18
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://www.leonerd.org.uk/code/libtermkey/%{name}-%{version}.tar.gz
