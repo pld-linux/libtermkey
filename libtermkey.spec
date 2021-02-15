@@ -5,13 +5,14 @@
 
 Summary:	Library for easy processing of keyboard entry from terminal-based programs
 Name:		libtermkey
-Version:	0.18
-Release:	2
+Version:        0.20
+Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://www.leonerd.org.uk/code/libtermkey/%{name}-%{version}.tar.gz
-# Source0-md5:	3be2e3e5a851a49cc5e8567ac108b520
-Patch0:		fix-test-compile.patch
+# Source0-md5:	710ee4e48d8550e65f3adf627aac8465
+Patch0:         0001-build-take-into-account-CFLAGS-LDFLAGS-for-tests.patch
+Patch1:         0002-include-stdlib.h-for-putenv.patch
 URL:		http://www.leonerd.org.uk/code/libtermkey/
 BuildRequires:	gcc
 BuildRequires:	libtool
@@ -42,17 +43,22 @@ Development files needed for %{name}.
 %prep
 %setup -q
 
+# No need for demos
+%{__sed} -i -e '/^all:/s/$(DEMOS)//' Makefile
+
 %build
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}" \
 	PREFIX=%{_prefix} \
-	LIBDIR=%{_libdir}
+	LIBDIR=%{_libdir} \
+	VERBOSE=1
 
 %if %{with tests}
 %{__make} test \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}"
+	CFLAGS="%{rpmcflags}" \
+	VERBOSE=1
 %endif
 
 %install
