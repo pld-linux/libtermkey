@@ -16,8 +16,9 @@ Patch1:         0002-include-stdlib.h-for-putenv.patch
 URL:		http://www.leonerd.org.uk/code/libtermkey/
 BuildRequires:	gcc
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 %if %{with unibilium}
-BuildRequires:	unibilium-devel
+BuildRequires:	unibilium-devel >= 0.1.0
 %else
 BuildRequires:	pkgconfig(tinfo)
 %endif
