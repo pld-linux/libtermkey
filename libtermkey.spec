@@ -5,12 +5,12 @@
 
 Summary:	Library for easy processing of keyboard entry from terminal-based programs
 Name:		libtermkey
-Version:	0.20
+Version:	0.22
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://www.leonerd.org.uk/code/libtermkey/%{name}-%{version}.tar.gz
-# Source0-md5:	710ee4e48d8550e65f3adf627aac8465
+# Source0-md5:	08bf514d59660391c3a21b3977a16c8c
 Patch0:		0001-build-take-into-account-CFLAGS-LDFLAGS-for-tests.patch
 Patch1:		0002-include-stdlib.h-for-putenv.patch
 URL:		http://www.leonerd.org.uk/code/libtermkey/
